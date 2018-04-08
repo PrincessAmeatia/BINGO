@@ -2,23 +2,29 @@
 <html>
 
     <style>
-        body {
-            /* background-image: url(https://i.pinimg.com/originals/c0/1f/81/c01f81c934ee53c92c73948976927d97.jpg);
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover; */
-        }
 
         li {
             list-style-type: none;
         }
 
-        #container {
-            /* don't worry what this means */
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            height: 100vh;
+        .bingo-board {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 600px;
+            height: 600px;
+            border: 1px solid black;
+        }
+
+        .bingo-space {
+            text-align: center;
+            flex: 1 0 20%;
+            height: 20%;
+
+            font-size: 24px;
+
+            line-height: 120px;
+            vertical-align: middle;
         }
 
         form {

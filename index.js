@@ -8,38 +8,41 @@ class BingoBoard extends Component {
         let spaces = [];
         let random = 0;
 
-        for (let counter=0; counter < 5; counter++) {
+        for (let counter=0; counter < 25; counter++) {
           random = Math.random() * 70;
           random = Math.round(random);
-          spaces.push(<BingoSpace number={random} />);
+
+          if (counter == 12) {
+            spaces.push(<BingoSpace isFreeSpace={true} />);
+          } else {
+            spaces.push(<BingoSpace number={random} />);
+          }
+
         }
 
         return (
-          <table border={1}>
-            <tr>
-              {spaces}
-            </tr>
-            <tr>
-              {spaces}
-            </tr>
-            <tr>
-              {spaces}
-            </tr>
-            <tr>
-              {spaces}
-            </tr>
-            <tr>
-              {spaces}
-            </tr>            
-          </table>
+          <div className="bingo-board">
+            {spaces}
+          </div>
         );
     }
 }
 
 class BingoSpace extends Component {
-  render() {
-    return <td>{this.props.number}</td>;
+
+  iWasClicked = () => {
+    alert(this.props.number);
   }
+
+  render() {
+
+    if (this.props.isFreeSpace) {
+      return <div className="bingo-space" onClick={this.iWasClicked}>FREE</div>;
+    } else {
+      return <div className="bingo-space" onClick={this.iWasClicked}>{this.props.number}</div>;
+    }
+  }
+
 }
 
   
