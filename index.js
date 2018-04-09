@@ -30,16 +30,48 @@ class BingoBoard extends Component {
 
 class BingoSpace extends Component {
 
+  constructor() {
+    super();
+
+    this.state = {
+      active: false
+    }
+  }
+
   iWasClicked = () => {
-    alert(this.props.number);
+    this.setState({
+      active: true
+    })
+
+    // this.setState({
+    //   active: !this.state.active
+    // })
   }
 
   render() {
 
+    let circleClassNames = "bingo-circle";
+
+    if (this.state.active) {
+      circleClassNames = "bingo-circle active";
+    }
+
     if (this.props.isFreeSpace) {
-      return <div className="bingo-space" onClick={this.iWasClicked}>FREE</div>;
+      return (
+        <div className="bingo-space" onClick={this.iWasClicked}>
+          <div className={circleClassNames}>
+              FREE
+          </div>
+        </div>
+      )
     } else {
-      return <div className="bingo-space" onClick={this.iWasClicked}>{this.props.number}</div>;
+      return (
+        <div className="bingo-space" onClick={this.iWasClicked}>
+          <div className={circleClassNames}>
+              {this.props.number}
+          </div>
+        </div>
+      )
     }
   }
 

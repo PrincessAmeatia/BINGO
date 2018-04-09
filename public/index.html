@@ -1,38 +1,63 @@
 <!doctype html>
 <html>
 
-    <style>
+    <head>
 
-        li {
-            list-style-type: none;
-        }
+        <link href="https://fonts.googleapis.com/css?family=Gaegu" rel="stylesheet">
 
-        .bingo-board {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            width: 600px;
-            height: 600px;
-            border: 1px solid black;
-        }
+        <style>
 
-        .bingo-space {
-            text-align: center;
-            flex: 1 0 20%;
-            height: 20%;
+            li {
+                list-style-type: none;
+            }
 
-            font-size: 24px;
+            .bingo-board {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                width: 600px;
+                height: 600px;
+                border: 1px solid black;
+            }
 
-            line-height: 120px;
-            vertical-align: middle;
-        }
+            .bingo-space {
+                position: relative;
 
-        form {
-            width: 400px;
-            color: white;
-            border: 1px solid black;
-        }
-    </style>
+                font-family: 'Gaegu';
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                text-align: center;
+                flex: 1 0 20%;
+                height: 20%;
+
+                font-size: 24px;
+
+                line-height: 120px;
+                vertical-align: middle;
+            }
+
+            .bingo-circle {
+
+                width: 80%;
+                height: 80%;
+            }
+
+            .bingo-circle.active {
+                border: 1px solid lightblue;
+                border-radius: 50%;
+                background-color:plum;
+            }
+
+            form {
+                width: 400px;
+                color: white;
+                border: 1px solid black;
+            }
+        </style>
+    </head>
 
     <body>
         <div id="root"></div>
