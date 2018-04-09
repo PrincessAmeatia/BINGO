@@ -21,8 +21,10 @@ class BingoBoard extends Component {
         }
 
         return (
-          <div className="bingo-board">
-            {spaces}
+          <div className="container">
+            <div className="bingo-board">
+              {spaces}
+            </div>
           </div>
         );
     }
@@ -39,13 +41,13 @@ class BingoSpace extends Component {
   }
 
   iWasClicked = () => {
-    this.setState({
-      active: true
-    })
-
     // this.setState({
-    //   active: !this.state.active
+    //   active: true
     // })
+
+    this.setState({
+      active: !this.state.active
+    })
   }
 
   render() {
